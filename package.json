@@ -1,12 +1,12 @@
 {
   "name": "node-red-contrib-arangodb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node for connecting to arangodb",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Chailuck Chantaravisutlert",
   "license": "ISC",
   "node-red": {
     "nodes": {
@@ -19,5 +19,9 @@
   },
   "dependencies": {
     "arangojs": "^5.8.0"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/IxCluzts/node-red-contrib-arangodb"
   }
 }
