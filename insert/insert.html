@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    RED.nodes.registerType('[Arango]insert',{
+        category: 'ArangoDB',
+        color: '#aa9139',
+        defaults: {
+            name: { value:"" },
+            dbconfig: {value:"", type: "dbconfig"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name || "[Arango]insert";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="[Arango]insert">
+    <div class="form-row">
+        <label for="node-input-dbconfig">DB Config</label>
+        <select  id="node-input-dbconfig"></select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    
+</script>
+
+<script type="text/x-red" data-help-name="[Arango]insert">
+    <p>This is a node for insert a document to the collection</p>
+
+    <h3>Inputs</h3>
+        <dl class="message-properties">
+            <dt>msg.collection
+                <span class="property-type">string</span>
+            </dt>
+            <dd> The collection name to be created </dd>
+            <dt> msg.payload
+                    <span class="property-type">object</span>
+            </dt>
+            <dd> Data to be inserted. </dd>
+        </dl>
+
+    <h3>Outputs</h3>
+        <ol class="node-ports">
+            <li>Standard output
+                <dl class="message-properties">
+                    <dt>status <span class="property-type">string</span></dt>
+                    <dd>the status of the execution</dd>
+                </dl>
+            </li>
+        </ol>
+</script>

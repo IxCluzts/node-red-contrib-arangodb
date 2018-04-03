@@ -1,0 +1,23 @@
+{
+  "name": "node-red-contrib-arangodb",
+  "version": "1.0.0",
+  "description": "Node for connecting to arangodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "node-red": {
+    "nodes": {
+      "[Arango]createcollection": "createcollection/createcollection.js",
+      "[Arango]insert":"insert/insert.js",
+      "[Arango]query":"query/query.js",
+      "[Arango]update":"update/update.js",
+      "dbconfig":"dbconfig/dbconfig.js"
+    }
+  },
+  "dependencies": {
+    "arangojs": "^5.8.0"
+  }
+}

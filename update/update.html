@@ -1,0 +1,67 @@
+<script type="text/javascript">
+    RED.nodes.registerType('[Arango]update',{
+        category: 'ArangoDB',
+        color: '#ffecaa',
+        defaults: {
+            name: { value:"" },
+            dbconfig: {value:"", type: "dbconfig"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name || "[Arango]update";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="[Arango]update">
+    <div class="form-row">
+            <label for="node-input-dbconfig">DB Config</label>
+            <select  id="node-input-dbconfig"></select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    
+</script>
+
+<script type="text/x-red" data-help-name="[Arango]update">
+    <p>This is a node for update a document in the collection</p>
+    <hr>
+    <h3> Input: </h3>
+    <ul>
+        <li> msg.collection > Database Collection </li>
+        <li> msg.documentHandle > ID or Revision of the document to be updated </li>
+        <li> msg.payload > Data to be inserted. </li>
+    </ul>
+
+
+    <h3>Inputs</h3>
+        <dl class="message-properties">
+            <dt>msg.collection
+                <span class="property-type">string</span>
+            </dt>
+            <dd> Database Collection </dd>
+            <dt> msg.documentHandle
+                    <span class="property-type">string</span>
+            </dt>
+            <dd> ID or Revision of the document to be updated </dd>
+
+            <dt> msg.payload
+                    <span class="property-type">string</span>
+            </dt>
+            <dd> Data to be inserted. </dd>
+        </dl>
+
+    <h3>Outputs</h3>
+        <ol class="node-ports">
+            <li>Standard output
+                <dl class="message-properties">
+                    <dt>status <span class="property-type">string</span></dt>
+                    <dd>the status of the execution</dd>
+                </dl>
+            </li>
+        </ol>
+</script>

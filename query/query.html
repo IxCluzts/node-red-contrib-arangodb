@@ -1,0 +1,55 @@
+<script type="text/javascript">
+    RED.nodes.registerType('[Arango]query', {
+        category: 'ArangoDB',
+        color: '#d4bd6a',
+        defaults: {
+            name: { value: "" },
+            dbconfig: { value: "", type: "dbconfig" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "file.png",
+        label: function () {
+            return this.name || "[Arango]query";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="[Arango]query">
+    <div class="form-row">
+            <label for="node-input-dbconfig">DB Config</label>
+            <select  id="node-input-dbconfig"></select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+  
+</script>
+
+<script type="text/x-red" data-help-name="[Arango]query">
+    <p>This is a node for using AQL to query the data from the database</p>
+ 
+
+    <h3>Inputs</h3>
+        <dl class="message-properties">
+            <dt>msg.query
+                <span class="property-type">string</span>
+            </dt>
+            <dd> Query to be parsed to the database </dd>
+            <dt> msg.vars
+                    <span class="property-type">object</span>
+            </dt>
+            <dd> Bind Vars for query </dd>
+        </dl>
+
+    <h3>Outputs</h3>
+        <ol class="node-ports">
+            <li>Standard output
+                <dl class="message-properties">
+                    <dt>status <span class="property-type">string</span></dt>
+                    <dd>the result of the execution</dd>
+                </dl>
+            </li>
+        </ol>
+</script>
